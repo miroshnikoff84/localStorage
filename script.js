@@ -12,7 +12,6 @@ let headerInput = document.querySelector('.header-input'),
 let clone = toDoItem[0].cloneNode(true);
 toDo.removeChild(toDoItem[0]);
 toDoCompleted.removeChild(toDoItem[1]);
-console.log(toDoItem.length);
 let info;
 function getInfo () {
   event.preventDefault();
@@ -20,11 +19,8 @@ function getInfo () {
   info = headerInput.value;
   let clons = info;
   localStorage.setItem(clons, info);
-  // console.log(localStorage.lel)
   addBusiness();
   headerInput.value = '';
-
- 
   }
 }
 function addBusiness () {
@@ -41,8 +37,6 @@ function addBusiness () {
     toDo.removeChild(clone2);
   }
   toDoRemove = document.querySelectorAll('.todo-remove');
-  
-  
   })
   buttonsClone.children[1].addEventListener('click', function () {
     toDoRemove = document.querySelectorAll('.todo-remove');
@@ -53,7 +47,5 @@ function addBusiness () {
     }
   
     })
-  
 }
-
 plusButton.addEventListener('click', getInfo)
